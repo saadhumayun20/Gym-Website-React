@@ -1,0 +1,64 @@
+/* Beginner.css */
+
+.beginner-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .beginner-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .workouts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .workout-item {
+    display: flex;
+    flex-direction: column; /* Stack title and video card vertically */
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .workout-info {
+    text-align: center; /* Center text */
+  }
+  
+  .workout-info h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .workout-info p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .video-card {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    height: 225px; /* Fixed height for the card */
+    overflow: hidden; /* Hide overflow to ensure the video doesn't spill out */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for card effect */
+    margin: 0 auto; /* Center the video card */
+    position: relative; /* Ensure the video fits correctly inside */
+  }
+  
+  .video-card .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the card area */
+    display: block; /* Removes any extra space below the video */
+  }
+  
