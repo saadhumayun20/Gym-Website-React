@@ -4,6 +4,12 @@ Steps to run the program are below:
 
 In the project directory, you can run:
 
+### `npm install`
+
+This is *important* as this will download all the node modules required to run the program.
+
+After you can start the program:
+
 ### `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
