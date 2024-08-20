@@ -31,20 +31,22 @@ app.post('/api/auth/signup', (req, res) => {
     });
   });
 
-// Sign-in route
-app.post('/api/auth/signin', (req, res) => {
-  const { username, password } = req.body;
+  app.post('/api/auth/signin', (req, res) => {
+    const { username, password } = req.body;
 
-  db.get("SELECT * FROM users WHERE username = ? AND password = ?", [username, password], (err, row) => {
-    if (err) {
-      return res.status(500).json({ error: 'Something went wrong.' });
-    }
-    if (!row) {
-      return res.status(401).json({ error: 'Invalid username or password.' });
-    }
-    res.status(200).json({ message: 'User signed in successfully!' });
-  });
+    db.get('SELECT * FROM users WHERE username = ?', [username], (err, user) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
+
+        if (!user || user.password !== password) {
+            return res.status(400).json({ error: 'Invalid username or password' });
+        }
+
+        return res.json({ message: 'Sign in successful' });
+    });
 });
+
 
 // Start server
 app.listen(PORT, () => {
