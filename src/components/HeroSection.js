@@ -15,7 +15,9 @@ function HeroSection() {
     if (user) {
       scrollToPrograms(); 
     } else {
-      navigate('/sign-up'); 
+      console.log('Navigating to sign-up');
+      navigate('/sign-in'); 
+      navigate()
     }
   };
 
