@@ -25,7 +25,7 @@ function SignIn() {
     .then(response => {
       login(formData.username);
       setMessage(response.data?.message || 'Sign in successful!');
-      navigate('/'); // Redirect to the home page
+      navigate('/'); 
     })
     .catch(error => {
       setMessage(error.response?.data?.error || 'Something went wrong. Please try again.');

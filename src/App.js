@@ -10,6 +10,7 @@ import SignIn from './components/pages/SignIn';
 import Beginner from './components/pages/Beginner';
 import Intermediate from './components/pages/Intermediate';
 import Advanced from './components/pages/Advanced';
+import { AuthProvider } from './components/pages/AuthProvider';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <>
+    <AuthProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -37,6 +39,7 @@ function App() {
           <Route path='/programs/advanced' element={<Advanced />} />
         </Routes>
       </Router>
+    </AuthProvider>
     </>
       
 

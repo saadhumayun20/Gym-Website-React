@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import { Button } from './Button';
@@ -11,15 +11,27 @@ function HeroSection() {
   const [showModal, setShowModal] = useState(false);
   const { user } = useContext(AuthContext);
 
-  const handleNavClick = () => {
-    if (user) {
-      scrollToPrograms(); 
-    } else {
+
+  // const handleNavClick = () => {
+  //   if (user == null) {
+  //     scrollToPrograms(); 
+  //   } else {
+  //     console.log('Navigating to sign-up');
+  //     console.log('User:', user);
+  //     navigate('/sign-in'); 
+  //   }
+  // };
+
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    if (user == null){
       console.log('Navigating to sign-up');
+      console.log('User:', user);
       navigate('/sign-in'); 
-      navigate()
+    } else {
+      scrollToPrograms();
     }
-  };
+  }
 
   const scrollToPrograms = () => {
     window.scrollTo({
