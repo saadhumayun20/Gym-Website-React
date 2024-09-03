@@ -1,0 +1,53 @@
+/* Workouts.css */
+
+.workouts-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .workouts-container h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .workouts-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .workout-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .workout-title {
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  .workout-description {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .workout-video-link {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #4caf50;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .workout-video-link:hover {
+    background-color: #45a049;
+  }

@@ -1,30 +1,41 @@
 import React from 'react';
-import './Beginner.css'; 
+import './Workouts.css';
 
-export default function Beginner() {
+const Workouts = () => {
+  const workouts = [
+    {
+      title: 'Push-Ups',
+      description: 'Push-ups help build upper body strength. Start with 3 sets of 10 reps.',
+      videoUrl: 'https://www.youtube.com/watch?v=_l3ySVKYVJ8',
+    },
+    {
+      title: 'Bodyweight Squats',
+      description: 'Bodyweight squats are great for building leg strength. Do 3 sets of 15 reps.',
+      videoUrl: 'https://www.youtube.com/watch?v=aclHkVaku9U',
+    },
+    {
+      title: 'Plank',
+      description: 'The plank is an excellent core exercise. Hold for 30 seconds and repeat 3 times.',
+      videoUrl: 'https://www.youtube.com/watch?v=pSHjTRCQxIw',
+    },
+  ];
+
   return (
-    <div className="beginner-container">
-      <h1 className="beginner-title">Beginner Program</h1>
-      <div className="workouts-list">
-        <div className="workout-item">
-          <div className="workout-info">
-            <h2>Workout 1</h2>
-            <p>Description for Workout 1</p>
+    <div className="workouts-container">
+      <h2>Beginner Workouts</h2>
+      <div className="workouts-cards">
+        {workouts.map((workout, index) => (
+          <div key={index} className="workout-card">
+            <h3 className="workout-title">{workout.title}</h3>
+            <p className="workout-description">{workout.description}</p>
+            <a href={workout.videoUrl} target="_blank" rel="noopener noreferrer" className="workout-video-link">
+              Watch Video
+            </a>
           </div>
-          <div className="video-card">
-            <video src="/videos/video-.mp4" autoPlay loop muted />
-          </div>
-        </div>
-        <div className="workout-item">
-          <div className="workout-info">
-            <h2>Workout 2</h2>
-            <p>Description for Workout 2</p>
-          </div>
-          <div className="video-card">
-            <video src="/videos/workout2.mp4" autoPlay loop muted />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default Workouts;
